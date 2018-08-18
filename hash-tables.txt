@@ -1,0 +1,68 @@
+1. A hash table is a data structure that stores data in key-value pairs with unique key values.
+
+2. Hashing is a conversion from a arbitrary data to a numerical index using a hashing function.
+
+3. Hash table take the key-value pair, hashing the key, find the internal array index by "mod"ing the hash code, and store the value in the array index.
+
+4. Hash tables are intended to be used as collections of similar data. Objects hold different types of data bundled together.
+
+5.
+* A list of pets and their unique names.
+  hash table
+* The name, age, and the birthday of your best friend.
+  object
+* The name and location of every company in a given city.
+  hash tale
+* All of the books checked out from a library by a particular individual.
+  hash table
+* The primary and secondary phone numbers for a contact.
+  object
+
+  6.
+  CLASS Customer
+    INIT HashCustomer
+
+    FUNCTION createCustomer with name, addr and phone
+      CREATE HashCustomer
+      STORE each phone(key) with name and addr into HashCustomer
+    END FUNCTION
+
+    FUNCTION findCustomer with phone
+      IF HashCustomer contains phone
+        RETURN name
+      RETURN NULL
+    END FUNCTION
+  END CLASS
+
+  7.
+  CLASS SkuInventory
+    INIT HashInventory
+
+    FUNCTION buildInventory with sku and qty
+      Create HashInventory
+      STORE each sku(key) with qty into HashInventory
+    END FUNCTION
+
+    FUNCTION updateInventory with sku and newQty // newQty can be + or =
+      IF HashInventory contains sku
+        SET qty = qty + newQty
+      END IF
+    END FUNCTION
+  END CLASS
+
+  8.
+  CLASS DigitalNewspaper
+    INIT HashNewspaper
+
+    FUNCTION buildDigitalNewspaper with publisher, releaseDate and content
+      Create HashNewspaper
+      INIT id = publisher + releaseDate
+      STORE each id (key) with content into HashNewspaper
+    END FUNCTION
+
+    FUNCTION findNewspaper with id
+      IF HashNewspaper contains id
+        RETURN content
+      END IF
+    END FUNCTION
+  END CLASS
